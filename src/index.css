@@ -1,0 +1,14 @@
+:root {
+  --cor-principal: #5d4539;
+  --cor-secundaria: #6e6e6e;
+  --cor-fundo: #f2f2f2;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+h1 {
+  color: var(--cor-principal);
+}
