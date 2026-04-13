@@ -1,0 +1,264 @@
+.nav {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.navPart1 {
+  width: 75%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--cor-principal) 0px 5px;
+}
+
+.logoMaximaPadrao {
+  width: 180px;
+}
+
+.navButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navButtons button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--cor-secundaria);
+}
+
+.navButtons button:hover {
+  color: black;
+}
+
+.atendimentoButton {
+  background-color: var(--cor-principal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 120px;
+  font-size: 12px;
+  border-radius: 0px 0px 10px 10px;
+  color: var(--cor-fundo);
+}
+
+.header {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.fundoHeader {
+  background-image: url("./assets/fundoHeader.png");
+  position: absolute;
+  width: 100%;
+  height: 1080px;
+  z-index: -1;
+  opacity: 0.5;
+  top: 0;
+}
+
+.header article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.whatsappBtn {
+  width: 200px;
+  background-color: var(--cor-principal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.whatsappBtn img {
+  width: 32px;
+}
+
+.setaBtn {
+  position: absolute;
+  border: none;
+  width: 50px;
+  bottom: 50px;
+  background: none;
+  animation: setaAnimation 1s infinite ease-in-out;
+}
+
+@keyframes setaAnimation {
+  0% {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+.setaBtn img {
+  width: 32px;
+  filter: invert(0.5);
+}
+
+.setaBtn:hover {
+  background: none;
+}
+
+.sobre {
+  background-color: var(--cor-principal);
+  color: var(--cor-fundo);
+  display: flex;
+  align-items: center;
+}
+
+.sobre h1 {
+  color: var(--cor-fundo);
+}
+
+.sobre article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.imgSobre {
+  width: 50%;
+}
+
+.agendarBtn {
+  background: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  border: var(--cor-fundo) 2px solid;
+  border-radius: 20px;
+  width: 250px;
+  padding: 10px;
+}
+
+.agendarBtn img {
+  width: 32px;
+  filter: invert();
+}
+
+.servicos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 1200px;
+}
+
+.cardsServicos {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardServicos {
+  box-sizing: border-box;
+  width: 30%;
+  height: 400px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  cursor: pointer;
+}
+
+.cardServicos:hover {
+  scale: 1.05;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.cardServicos img {
+  border-radius: 20px 20px 0px 0px;
+}
+
+.cardServicos h3 {
+  color: var(--cor-principal);
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.cardServicos p {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.informacoesContato {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.informacoesContato div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.verNoGoogleMaps {
+  color: var(--cor-principal);
+  font-weight: bold;
+  font-size: 12px;
+  transition: 0.2s;
+  border-radius: 20px;
+}
+
+.verNoGoogleMaps:hover {
+  background-color: color-mix(in srgb, var(--cor-fundo), black 10%);
+}
+
+.maps {
+  width: 100%;
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+}
+
+.footer {
+  background-color: var(--cor-principal);
+  height: 100px;
+  color: var(--cor-fundo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding-left: 200px;
+  padding-right: 200px;
+}

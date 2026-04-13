@@ -2,11 +2,46 @@
   --cor-principal: #5d4539;
   --cor-secundaria: #6e6e6e;
   --cor-fundo: #f2f2f2;
+
+  --padding: 200px;
+}
+
+* {
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 }
 
 body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-secundaria);
+}
+
+button {
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button p {
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: color-mix(in srgb, var(--cor-principal), black 20%);
+}
+
+a {
+  cursor: pointer;
+}
+
+section {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  height: 700px;
 }
 
 h1 {
