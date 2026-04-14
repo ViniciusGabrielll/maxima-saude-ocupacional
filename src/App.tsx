@@ -12,49 +12,87 @@ import exameDeMudancaDeFuncao from "./assets/cards/exameDeMudancaDeFuncao.svg";
 import exameDeRetornoDoTrabalho from "./assets/cards/exameDeRetornoDoTrabalho.svg";
 import examePeriodico from "./assets/cards/examePeriodico.svg";
 
-
 function App() {
+  const smoothScrollTo = (targetId: string, duration = 800) => {
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    const start = window.scrollY;
+    const end = target.getBoundingClientRect().top + window.scrollY;
+    const distance = end - start;
+
+    let startTime: number | null = null;
+
+    // easing (suavização de verdade)
+    const easeInOut = (t: number) => {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    };
+
+    const animation = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      const ease = easeInOut(progress);
+
+      window.scrollTo(0, start + distance * ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
   return (
     <div>
-      <nav className={styles.nav}>
-        <div className={styles.navPart1}>
-          <img
-            src={logoMaximaPadrao}
-            alt="Logo Máxima Padrão"
-            className={styles.logoMaximaPadrao}
-          />
-          <div className={styles.navButtons}>
-            <button>Início</button>
-            <button>Sobre</button>
-            <button>Serviços</button>
-            <button>Contato</button>
+      <section id="inicio" className={styles.header}>
+        <nav className={styles.nav}>
+          <div className={styles.navPart1}>
+            <img
+              src={logoMaximaPadrao}
+              alt="Logo Máxima Padrão"
+              className={styles.logoMaximaPadrao}
+            />
+            <div className={styles.navButtons}>
+              <button onClick={() => smoothScrollTo("#inicio")}>Início</button>
+              <button onClick={() => smoothScrollTo("#sobre")}>Sobre</button>
+              <button onClick={() => smoothScrollTo("#servicos")}>
+                Serviços
+              </button>
+              <button onClick={() => smoothScrollTo("#contato")}>
+                Contato
+              </button>
+            </div>
           </div>
-        </div>
-        <a className={styles.atendimentoButton}>
-          <h3>Atendimento</h3>
-          <p>+55 81 98294-2490</p>
-        </a>
-      </nav>
-      <section className={styles.header}>
+          <a className={styles.atendimentoButton}>
+            <h3>Atendimento</h3>
+            <p>+55 81 99228-1829</p>
+          </a>
+        </nav>
         <article>
-          <h2>CENTRO DE MÉDICINA DO TRABALHO EM CARUARU-PE</h2>
+          <h2>CLINÍCA DE MEDICINA DO TRABALHO EM CARUARU - PE</h2>
           <h1>
             CUIDANDO DA SAÚDE OCUPACIONAL COM EXCELÊNCIA E RESPONSABILIDADE.
           </h1>
         </article>
         <article>
-          <h2>Marque sua consulta agora!</h2>
+          <h2>Orçamento exame ocupacional!</h2>
           <button className={styles.whatsappBtn}>
             <img src={whatsappIcon} alt="Icone do WhatsApp" />
             <p>WHATSAPP</p>
           </button>
-          <button className={styles.setaBtn}>
-            <img src={setaParaBaixo} alt="Seta para baixo" />
-          </button>
         </article>
+        <button
+          onClick={() => smoothScrollTo("#sobre")}
+          className={styles.setaBtn}
+        >
+          <img src={setaParaBaixo} alt="Seta para baixo" />
+        </button>
       </section>
       <div className={styles.fundoHeader}></div>
-      <section className={styles.sobre}>
+      <section id="sobre" className={styles.sobre}>
         <img
           src={logotipoMaxima}
           alt="logo Maxima"
@@ -69,8 +107,8 @@ function App() {
             Medicina do Trabalho, perícias e programas de saúde ocupacional, com
             foco na redução de riscos e segurança jurídica da sua empresa.
             <br /> <br />
-            Marque já sua consulta e comece a cuidar da sua saúde ocupacional
-            com quem entende do assunto.
+            Realize exames do PCMSO com quem tem excelência no atendimento e
+            agilidade na entrega de resultados.
           </p>
           <button className={styles.agendarBtn}>
             <img src={agenda} alt="Icone de Agenda" />
@@ -78,7 +116,7 @@ function App() {
           </button>
         </article>
       </section>
-      <section className={styles.servicos}>
+      <section id="servicos" className={styles.servicos}>
         <h1>Serviços Oferecidos</h1>
         <article>
           <h3>CONHEÇA OS PRINCIPAIS SERVIÇOS OFERECIDOS PELA MÁXIMA.</h3>
@@ -104,9 +142,9 @@ function App() {
             <div className={styles.cardServicos}>
               <img
                 src={exameDeMudancaDeFuncao}
-                alt="Imagem do Exame de Mudança de Função"
+                alt="Imagem do Exame de Mudança de Risco Ocupacional"
               />
-              <h3>EXAME DE MUDANÇA DE FUNÇÃO</h3>
+              <h3>EXAME DE MUNDAÇA DE RISCO OCUPACIONAL</h3>
               <p>Necessário se os riscos da nova função forem diferentes. </p>
             </div>
             <div className={styles.cardServicos}>
@@ -117,7 +155,7 @@ function App() {
           </div>
         </article>
       </section>
-      <section className={styles.contato}>
+      <section id="contato" className={styles.contato}>
         <article className={styles.informacoesContato}>
           <div>
             <h1>Faça seu agendamento</h1>
@@ -130,7 +168,7 @@ function App() {
               <p>WHATSAPP</p>
             </button>
             <p>
-              <span>Telefone:</span> +55 81 98294-2490
+              <span>Telefone:</span> +55 81 99228-1829
             </p>
           </div>
           <div>
@@ -141,8 +179,15 @@ function App() {
           <div>
             <h1>Funcionamento</h1>
             <p>
-              Segunda à Sexta <br />
-              Horário 8:00 as 16:30
+              Exames médicos por ordem de chegada das 07 as 12h de segunda as
+              sextas feiras.
+            </p>
+
+            <p>
+              Resultados e liberação de exames: de segunda a quinta-feira, das
+              13h às 17h, e às sextas-feiras, das 13h às 16h. Atendimento pelo
+              e-mail <strong>atendimentos@clinicamaxima.net</strong> ou pelo
+              WhatsApp <strong>(81) 98294-2490.</strong>
             </p>
           </div>
         </article>
