@@ -36,6 +36,7 @@ button:hover {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 section {

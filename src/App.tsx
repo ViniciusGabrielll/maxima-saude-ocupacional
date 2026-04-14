@@ -23,7 +23,6 @@ function App() {
 
     let startTime: number | null = null;
 
-    // easing (suavização de verdade)
     const easeInOut = (t: number) => {
       return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     };
@@ -66,7 +65,10 @@ function App() {
               </button>
             </div>
           </div>
-          <a className={styles.atendimentoButton}>
+          <a
+            href="https://wa.me/5581992281829"
+            className={styles.atendimentoButton}
+          >
             <h3>Atendimento</h3>
             <p>+55 81 99228-1829</p>
           </a>
@@ -79,10 +81,10 @@ function App() {
         </article>
         <article>
           <h2>Orçamento exame ocupacional!</h2>
-          <button className={styles.whatsappBtn}>
+          <a href="https://wa.me/5581992281829" className={styles.whatsappBtn}>
             <img src={whatsappIcon} alt="Icone do WhatsApp" />
             <p>WHATSAPP</p>
-          </button>
+          </a>
         </article>
         <button
           onClick={() => smoothScrollTo("#sobre")}
@@ -110,7 +112,10 @@ function App() {
             Realize exames do PCMSO com quem tem excelência no atendimento e
             agilidade na entrega de resultados.
           </p>
-          <button className={styles.agendarBtn}>
+          <button
+            onClick={() => smoothScrollTo("#contato")}
+            className={styles.agendarBtn}
+          >
             <img src={agenda} alt="Icone de Agenda" />
             <p>AGENDAR CONSULTA</p>
           </button>
@@ -163,10 +168,13 @@ function App() {
               Para marcar uma consulta, tirar dúvidas ou solicitar informações,
               você pode entrar em contato conosco pelo whatsapp:
             </p>
-            <button className={styles.whatsappBtn}>
+            <a
+              href="https://wa.me/5581992281829"
+              className={styles.whatsappBtn}
+            >
               <img src={whatsappIcon} alt="Icone do WhatsApp" />
               <p>WHATSAPP</p>
-            </button>
+            </a>
             <p>
               <span>Telefone:</span> +55 81 99228-1829
             </p>
@@ -174,7 +182,12 @@ function App() {
           <div>
             <h1>Nossa Localização</h1>
             <p>Rua Nossa Senhora de Fátima, 158, Caruaru 55012600</p>
-            <a className={styles.verNoGoogleMaps}>Ver no Google Maps</a>
+            <a
+              href="https://maps.app.goo.gl/9Goo5mPAXGFUnPfs6"
+              className={styles.verNoGoogleMaps}
+            >
+              Ver no Google Maps
+            </a>
           </div>
           <div>
             <h1>Funcionamento</h1>

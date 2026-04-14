@@ -46,6 +46,11 @@
   font-size: 12px;
   border-radius: 0px 0px 10px 10px;
   color: var(--cor-fundo);
+  transition: 0.2s;
+}
+
+.atendimentoButton:hover {
+  background-color: color-mix(in srgb, var(--cor-principal), black 20%);
 }
 
 .header {
@@ -79,6 +84,9 @@
 .whatsappBtn {
   width: 200px;
   background-color: var(--cor-principal);
+  color: var(--cor-fundo);
+  font-weight: bold;
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,6 +272,10 @@
   align-items: center;
   padding-left: var(--padding);
   padding-right: var(--padding);
+}
+
+.footer img {
+  width: 180px;
 }
 
 @media (max-width: 1400px) {
@@ -530,5 +542,9 @@
     padding-left: var(--padding);
     padding-right: var(--padding);
     margin-top: 50px;
+  }
+
+  .footer img {
+    width: 100px;
   }
 }
