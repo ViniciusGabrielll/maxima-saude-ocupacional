@@ -117,7 +117,7 @@ function App() {
             className={styles.agendarBtn}
           >
             <img src={agenda} alt="Icone de Agenda" />
-            <p>AGENDAR CONSULTA</p>
+            <p>Começar Atendimento</p>
           </button>
         </article>
       </section>
@@ -163,7 +163,7 @@ function App() {
       <section id="contato" className={styles.contato}>
         <article className={styles.informacoesContato}>
           <div>
-            <h1>Faça seu agendamento</h1>
+            <h1>Começe seu atendimento!</h1>
             <p>
               Para marcar uma consulta, tirar dúvidas ou solicitar informações,
               você pode entrar em contato conosco pelo whatsapp:
@@ -199,8 +199,8 @@ function App() {
             <p>
               Resultados e liberação de exames: de segunda a quinta-feira, das
               13h às 17h, e às sextas-feiras, das 13h às 16h. Atendimento pelo
-              e-mail <strong>atendimentos@clinicamaxima.net</strong> ou pelo
-              WhatsApp <strong>(81) 98294-2490.</strong>
+              e-mail <strong>comercial@clinicamaxima.net</strong> ou pelo
+              WhatsApp <strong>(81) 99228-1829</strong>
             </p>
           </div>
         </article>
